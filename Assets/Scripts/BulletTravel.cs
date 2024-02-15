@@ -5,6 +5,8 @@ using UnityEngine;
 public class BulletTravel : MonoBehaviour
 {
     float speed = 5f;
+    [SerializeField]
+    bool right = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,13 @@ public class BulletTravel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        if (right)
+        {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+        }
     }
 }

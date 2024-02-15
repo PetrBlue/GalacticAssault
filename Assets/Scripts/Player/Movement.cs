@@ -14,6 +14,10 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        Move();
+    }
+    public void Move()
+    {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = -Input.GetAxis("Vertical");
 
@@ -24,7 +28,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) ||
             Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(movement * speed * Time.deltaTime); 
+            transform.Translate(movement * speed * Time.deltaTime);
         }
         else
         {
