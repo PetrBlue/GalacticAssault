@@ -18,7 +18,12 @@ public class CollisionManager : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Laser"))
+        {
+            Debug.Log("Player hit the laser!");
+
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("Player collided with an enemy!");
             manager.EnemyCollision();

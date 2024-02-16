@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletTravel : MonoBehaviour
 {
+    [SerializeField]
     float speed = 5f;
     [SerializeField]
     bool right = true;

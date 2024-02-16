@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    Rigidbody2D rb;
-    Transform transfrom;
-    float speed = 2f;
-    float minY = -2.5f;
-    float maxY = 2.5f;
-    float curTimeout = 3f;
-    float minTimeout = 2f;
-    float maxTimeout = 5f;
-    float timeoutChance = 0.001f; // procents
-    bool moving = false;
-    private Vector3 targetPosition;
+    protected Rigidbody2D rb;
+    protected Transform transfrom;
+    protected float speed = 2f;
+    protected float minY = -2.5f;
+    protected float maxY = 2.5f;
+    protected float curTimeout = 3f;
+    protected float minTimeout = 2f;
+    protected float maxTimeout = 5f;
+    protected float timeoutChance = 0.001f; // procents
+    protected bool moving = false;
+    protected private Vector3 targetPosition;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
         targetPosition = GetRandomPosition();
     }
 
-    void Update()
+    public virtual void Update()
     {
         if (moving)
         {
@@ -54,7 +54,6 @@ public class EnemyMovement : MonoBehaviour
 
         if (curTimeout <= 0f)
         {
-            // Reset timer and resume movement
             moving = true;
             targetPosition = GetRandomPosition();
             curTimeout = Random.Range(minTimeout, maxTimeout);
@@ -63,7 +62,6 @@ public class EnemyMovement : MonoBehaviour
 
     void StartTimeout()
     {
-        // Start timeout and stop movement
         moving = false;
         curTimeout = Random.Range(minTimeout, maxTimeout);
     }

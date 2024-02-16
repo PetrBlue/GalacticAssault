@@ -5,13 +5,13 @@ using UnityEngine;
 public class EnemyBulletSpawn : MonoBehaviour
 {
     [SerializeField]
-    Transform spawner;
+    protected Transform spawner;
     [SerializeField]
-    GameObject bullet;
-    float curTimeout = 0f;
-    float timeoutTime = 0.5f;
-    Vector2 lastPosition;
-    Vector2 curPosition;
+    protected GameObject bullet;
+    protected float curTimeout = 0f;
+    protected float timeoutTime = 0.5f;
+    protected Vector2 lastPosition;
+    protected Vector2 curPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,7 @@ public class EnemyBulletSpawn : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
         curPosition = (Vector2)transform.position;
         if (curTimeout > 0f)
