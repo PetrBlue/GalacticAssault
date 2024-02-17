@@ -24,7 +24,7 @@ public class PlayerManager : MonoBehaviour
         health -= bulletHit;
         if (health <= 0)
         {
-            Debug.Log("Player is dead!");
+            Debug.Log("Player HP: " + health +  ", Player is dead!");
         }
         else
         {

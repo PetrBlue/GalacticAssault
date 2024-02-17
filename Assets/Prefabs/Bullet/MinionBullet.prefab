@@ -177,10 +177,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5577365160186690833}
-  - component: {fileID: 5338376653967972974}
   - component: {fileID: 5970556746407984635}
+  - component: {fileID: 9027075116618130646}
   m_Layer: 7
-  m_Name: BossBullet
+  m_Name: MinionBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,14 +196,28 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6602925069556615821}
   - {fileID: 8917303825831369656}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &5338376653967972974
+--- !u!114 &5970556746407984635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452191821602469769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99ef7e0a8f0465a4b8d21ac5fbb4d81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  right: 0
+--- !u!60 &9027075116618130646
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,23 +261,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: -0.010847066, y: 0.50103486}
+      - {x: -0.8642801, y: 0.0052990466}
+      - {x: -0.0020433068, y: -0.49445206}
+      - {x: 0.35999697, y: -0.2992047}
+      - {x: 0.8534328, y: 0.0052991956}
   m_UseDelaunayMesh: 0
---- !u!114 &5970556746407984635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5452191821602469769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99ef7e0a8f0465a4b8d21ac5fbb4d81a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  right: 0

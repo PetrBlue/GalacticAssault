@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     protected Rigidbody2D rb;
-    protected Transform transfrom;
+    protected Transform transform;
     protected float speed = 2f;
     protected float minY = -2.5f;
     protected float maxY = 2.5f;
@@ -18,7 +18,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transfrom = GetComponent<Transform>();
+        transform = GetComponent<Transform>();
         targetPosition = GetRandomPosition();
     }
 
@@ -36,9 +36,9 @@ public class EnemyMovement : MonoBehaviour
 
     void MoveToTarget()
     {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        base.transform.position = Vector3.MoveTowards(base.transform.position, targetPosition, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
+        if (Vector3.Distance(base.transform.position, targetPosition) < 0.01f)
         {
             targetPosition = GetRandomPosition();
         }
@@ -68,6 +68,6 @@ public class EnemyMovement : MonoBehaviour
 
     Vector3 GetRandomPosition()
     {
-        return new Vector3(transform.position.x, Random.Range(minY, maxY), transform.position.z);
+        return new Vector3(base.transform.position.x, Random.Range(minY, maxY), base.transform.position.z);
     }
 }
